@@ -4,6 +4,7 @@ from django.urls import path
 
 
 urlpatterns = [
-    path("hola-mundo/", hola_mundo, name="hola-mundo"),
-    path("hola-soy-una-plantilla/", hola_soy_una_plantilla, name="hola-soy-una-plantilla"),
+    path("", index, name="index"),
+    path("agregar/", agregar, name="agregar"),
+    path("borrar/<identificador>", borrar, name="borrar"),
 ]
