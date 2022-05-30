@@ -7,10 +7,18 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{%url 'index' %}"><h2>Miembros de mi familia</h2></a>
+    </button>
+  </div>
+</nav>
+
+
 <div class="container">
     <div class="row">
       <div class="col">
-        <h1>Miembros de Mi Familia</h1>
         {% url 'agregar' as agregar_url %}
         {% bootstrap_button "Agregar" size="sm" button_class="btn-primary" button_type="link" href=agregar_url %}
 
@@ -51,4 +59,11 @@
       </div>
     </div>
   </div>
+
+
+<ul class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Miembros de la familia</span>
+  </div>
+</ul>
   
