@@ -7,7 +7,7 @@ from familia.forms import PersonaForm
 
 def index(request):
     personas = Persona.objects.all()
-    return HttpResponse(render(request, "familia/index.html", {"personas":personas}))
+    return HttpResponse(render(request, "familia/lista_familiares.html", {"personas":personas}))
 
 
 def agregar(request):
