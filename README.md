@@ -13,12 +13,12 @@ Este MVT contiene:
 windows:
 
 ```PS
-C:\> git clone https://github.com/martinezger/entrega1-Barrett.git
+C:\> git clone https://github.com/Oliver-Barrett/entrega1-Barrett.git
 ```
 
 Linux/Mac:
 ```bash
-$ git clone https://github.com/martinezger/entrega1-Barrett.git
+$ git clone https://github.com/Oliver-Barrett/entrega1-Barrett.git
 ```
 
 ## Correr el Servidor
@@ -26,7 +26,7 @@ $ git clone https://github.com/martinezger/entrega1-Barrett.git
 Los siguientes comandos son analogos en Mac/Linux/Windows:
 
 ```bash
-cd mi-primer-mvt
+cd entrega1_barrett
 python manage.py migrate
 ```
 La consola mostrara las migraciones de la base de datos que se realizaron.
