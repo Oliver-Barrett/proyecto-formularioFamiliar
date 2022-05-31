@@ -7,3 +7,15 @@ class Persona(models.Model):
     altura = models.FloatField()
     fecha_nacimiento = models.DateField()
     email = models.TextField(max_length=100)
+
+
+class Vehiculo(Persona):
+    tipo = models.CharField(max_length=100)
+    marca = models.CharField(max_length=100)
+    modelo = models.IntegerField()
+
+
+class Celular(Vehiculo):
+    marca_celular = models.CharField(max_length=100)
+    empresa = models.CharField(max_length=100)
+    numero = models.IntegerField()

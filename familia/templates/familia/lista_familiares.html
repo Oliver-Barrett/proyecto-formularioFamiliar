@@ -9,6 +9,9 @@
         {% url 'agregar' as agregar_url %}
         {% bootstrap_button "Agregar" size="sm" button_class="btn-primary" button_type="link" href=agregar_url %}
 
+        {% url 'buscar' as buscar_url %}
+        {% bootstrap_button "Buscar" size="sm" button_class="btn-primary" button_type="link" href=buscar_url %}
+
       </div>
       </div>
       <dov class="row">
@@ -22,6 +25,12 @@
                 <th scope="col">Email</th>
                 <th scope="col">Fecha Nacimiento</th>
                 <th scope="col">Altura</th>
+                <th scope="col">Tipo de Vehiculo</th>
+                <th scope="col">Marca del Vehiculo</th>
+                <th scope="col">Modelo del Vehiculo</th>
+                <th scope="col">Marca de Celular</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Numero</th>
                 <th scope="col">Acciones</th>
             </thead>
         
@@ -34,6 +43,12 @@
                     <td> {{p.email}} </td>
                     <td> {{p.fecha_nacimiento}} </td>
                     <td> {{p.altura}} </td>
+                    <td> {{p.tipo}} </td>
+                    <td> {{p.marca}} </td>
+                    <td> {{p.modelo}} </td>
+                    <td> {{p.marca_celular}} </td>
+                    <td> {{p.empresa}} </td>
+                    <td> {{p.numero}} </td>
                     {% url 'borrar' identificador=p.id as borrar_url %}
                     <td>{% bootstrap_button "Borrar" size="sm" button_class="btn-danger" button_type="link" href=borrar_url %}</td>
                 </tr>  

@@ -1,12 +1,12 @@
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import render
 from familia.models import *
-from familia.forms import PersonaForm
+from familia.forms import *
 
 
 
 def index(request):
-    personas = Persona.objects.all()
+    personas = Celular.objects.all()
     return HttpResponse(render(request, "familia/lista_familiares.html", {"personas":personas}))
 
 
@@ -20,7 +20,15 @@ def agregar(request):
             altura = form.cleaned_data['altura']
             fecha_nacimiento = form.cleaned_data['fecha_nacimiento']
             email = form.cleaned_data['email']
-            Persona(nombre=nombre, apellido=apellido, email=email, fecha_nacimiento=fecha_nacimiento, altura=altura).save()
+            tipo = form.cleaned_data['tipo']
+            marca = form.cleaned_data['marca']
+            modelo = form.cleaned_data['modelo']
+            marca_celular = form.cleaned_data['marca_celular']
+            empresa = form.cleaned_data['empresa']
+            numero = form.cleaned_data['numero']
+
+            Persona, Vehiculo, Celular(nombre=nombre, apellido=apellido, email=email, fecha_nacimiento=fecha_nacimiento, altura=altura, tipo=tipo, marca=marca, modelo=modelo, marca_celular=marca_celular, empresa=empresa, numero=numero).save()
+            
             return HttpResponseRedirect("/familia/")
     
     elif request.method == "GET":
@@ -39,3 +47,18 @@ def borrar(request, identificador):
         return HttpResponseRedirect("/familia/")
     else:
         return HttpResponseBadRequest("Error no conzco ese metodo para esta request")
+
+
+def buscar(request):
+    if request.method == "GET":
+        form_busqueda = BuscarPersonasForm()
+
+        return render(request, "familia/form_busqueda.html", {"form_busqueda":form_busqueda})
+
+    elif request.method == "POST":
+        form_busqueda = BuscarPersonasForm(request.POST)
+        if form_busqueda.is_valid():
+            palabra_a_buscar = form_busqueda.cleaned_data['palabra_a_buscar']
+            personas = Persona.objects.filter(nombre__icontains=palabra_a_buscar)
+
+    return render(request, "familia/lista_familiares.html", {"personas":personas})
