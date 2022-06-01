@@ -4,6 +4,9 @@
 
 {% block cuerpo %}
 <div class="container">
+  {% if resultados_busqueda %}
+    <h1>Resultados de la busqueda</h1>
+  {% endif %}
     <div class="row">
       <div class="col">
         {% url 'agregar' as agregar_url %}
