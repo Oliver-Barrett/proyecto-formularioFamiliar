@@ -17,3 +17,7 @@ class PersonaForm(forms.Form):
 
 class BuscarPersonasForm(forms.Form):
     palabra_a_buscar = forms.CharField(label="Buscar")
+
+
+class ActualizarPersonaForm(PersonaForm):
+    id = forms.IntegerField(widget = forms.HiddenInput())

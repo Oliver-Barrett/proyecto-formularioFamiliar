@@ -8,7 +8,7 @@
 {% bootstrap_messages %}
 
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-2">
   <div class="container-fluid">
     <a class="navbar-brand" href="{%url 'index' %}"><h2>Miembros de mi familia</h2></a>
     </button>
@@ -20,9 +20,9 @@
 {% endblock %}
 
 
-<footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-    <span class="text-muted">Trabajo entregable</span>
-  </div>
-</footer>
+<ul class="nav bg-dark fixed-bottom justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="{%url  'index' %}">--Familiares--</a>
+  </li>
+</ul>
   
