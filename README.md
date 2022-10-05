@@ -13,14 +13,12 @@ Este MVT contiene:
 windows:
 
 ```PS
-C:\> git clone https://github.com/Oliver-Barrett/proyecto-formularioFamiliar
-.git
+C:\> git clone https://github.com/Oliver-Barrett/proyecto-formularioFamiliar.git
 ```
 
 Linux/Mac:
 ```bash
-$ git clone https://github.com/Oliver-Barrett/proyecto-formularioFamiliar
-.git
+$ git clone https://github.com/Oliver-Barrett/proyecto-formularioFamiliar.git
 ```
 
 ## Correr el Servidor
